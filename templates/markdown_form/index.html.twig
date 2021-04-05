@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Markdown Form{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .example-wrapper textarea { width: 100%; height: 200px; }
+    .example-wrapper .preview {border: 1px solid grey; min-height: 200px; padding: 10px}
+</style>
+
+<script>
+    const markdownPreviewRoute = "{{ path('markdown_preview')|escape('js') }}";
+</script>
+
+<div class="example-wrapper">
+    <h1>Markdown Form</h1>
+
+    <p>Write text here:</p>
+    <form>
+        <textarea id="markdown-form-text"></textarea>
+    </form>
+
+    <h3>Preview:</h3>
+    <div id="markdown-form-preview" class="preview"></div>
+</div>
+{% endblock %}
